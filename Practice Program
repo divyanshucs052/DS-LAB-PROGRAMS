@@ -1,0 +1,32 @@
+#include<stdio.h>
+struct student
+{
+    int Id,age;
+    float marks;
+}   stud[100];
+
+void main()
+{
+    int i,n;
+    printf("Enter the total no of students\n");
+    scanf("%d",&n);
+    printf("enter student info as Id Age Marks\n");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d %d %f",&stud[i].Id,&stud[i].age,&stud[i].marks);
+    }
+    printf("Qualified students are: ");
+    printf("\nId\t\tAGE\t\tMARKS\n");
+    for(i=0;i<n;i++)
+    {
+        if((stud[i].age>20) && (stud[i].marks>=65) && (stud[i].marks<=100))
+            printf("%d\t\t%d\t\t%f\t\t\n",stud[i].Id,stud[i].age,stud[i].marks);
+    }
+    printf("Not qualified students are: ");
+    printf("\nId\t\tAGE\t\tMARKS\n");
+    for(i=0;i<n;i++)
+    {
+        if((stud[i].age<=20) || (stud[i].marks<65))
+            printf("%d\t\t%d\t\t%f\t\t\n",stud[i].Id,stud[i].age,stud[i].marks);
+    }
+}
